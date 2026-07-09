@@ -1,3 +1,4 @@
+import "@testing-library/jest-dom"; // <-- Add this line at the top
 import { render, screen } from "@testing-library/react";
 import BookingForm from "./BookingForm";
 import { initializeTimes, updateTimes } from "./App";
