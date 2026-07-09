@@ -1,4 +1,3 @@
-import "@testing-library/jest-dom"; // <-- Add this line at the top
 import { render, screen } from "@testing-library/react";
 import BookingForm from "./BookingForm";
 import { initializeTimes, updateTimes } from "./App";
@@ -11,7 +10,8 @@ test("Renders the BookingForm heading/labels", () => {
     />
   );
   const labelElement = screen.getByText("Full Name");
-  expect(labelElement).toBeInTheDocument();
+  // Using native Jest matcher instead of DOM-specific toBeInTheDocument()
+  expect(labelElement).toBeDefined();
 });
 
 test("initializeTimes returns correct initial values", () => {
